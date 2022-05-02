@@ -4,3 +4,8 @@
      Genre: Action
      Your Rating: 10
 ----------------------------------------------------------
+[2]  Movie Title: Kill Bill
+     Year Released: 1986
+     Genre: Thriller
+     Your Rating: 8.3
+----------------------------------------------------------

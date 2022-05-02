@@ -139,7 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="list.cpp" />
+    <ClCompile Include="listCount.cpp" />
     <ClCompile Include="Media Manager.cpp" />
+    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="movie.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="list.h" />
+    <ClInclude Include="listCount.h" />
+    <ClInclude Include="menu.h" />
+    <ClInclude Include="movie.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
