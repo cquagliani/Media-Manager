@@ -1,0 +1,6 @@
+-------------------- Movie Rating Log --------------------
+[1]  Movie Title: The Batman
+     Year Released: 2022
+     Genre: Action
+     Your Rating: 10
+----------------------------------------------------------
