@@ -6,17 +6,17 @@ using namespace std;
 
 void displayMenu() {
     // Main Menu
-    cout << "-------------------- Movie Rating Log --------------------" << endl;
+    cout << "-------------------- Media Log --------------------" << endl;
     cout << "[1] Create New List" << endl;
     cout << "[2] Add to Existing List" << endl;
     cout << "[3] Display Existing List" << endl;
-    cout << "----------------------------------------------------------" << endl;
 }
 
 void menuLogic(fstream& outputFile, int movieCount) {
     // Get User Selection
     int usrSelection;
     cin >> usrSelection;
+    cout << endl;
 
     // Main Logic
     if (usrSelection == 1) {

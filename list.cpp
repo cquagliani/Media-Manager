@@ -4,21 +4,53 @@
 using namespace std;
 
 void createNewList(fstream& outputFile, int& movieCount) {
+    int mediaType;
     int numEntries;
     char overwrite;
+    string media[4] = { "movies", "TV shows", "video games", "books" };
+
     cout << "Are you sure? You will overwrite any previous lists. (Y/N): ";
     cin >> overwrite;
+    cout << endl;
 
-    if (overwrite == 'Y') {
-        movieCount = 1;
-        cout << "How many movies would you like to enter? ";
+    if (overwrite == 'Y' || overwrite == 'y') {
+        outputFile.open("Rating.txt", ios::out);
+
+        movieCount = 1; // resets the length of the list for proper numbering in the .txt file and output
+        cout << "Please select the type of media you wish to log: " << endl;
+        cout << "[1] Movie" << endl;
+        cout << "[2] TV Show" << endl;
+        cout << "[3] Video Game" << endl;
+        cout << "[4] Book" << endl;
+
+        cin >> mediaType;
+        cout << endl;
+
+        cout << "How many " << media[mediaType - 1] << " would you like to enter? ";
         cin >> numEntries;
         cout << endl;
 
-        outputFile.open("Rating.txt", ios::out);
-
         if (outputFile.is_open()) {
-            outputFile << "-------------------- Movie Rating Log --------------------" << endl;
+
+            switch (mediaType) {
+            case 1:
+                outputFile << "-------------------- Movie Rating Log --------------------" << endl;
+                break;
+            case 2:
+                outputFile << "-------------------- TV Show Rating Log --------------------" << endl;
+                break;
+            case 3:
+                outputFile << "-------------------- Video Game Rating Log --------------------" << endl;
+                break;
+            case 4:
+                outputFile << "-------------------- Book Rating Log --------------------" << endl;
+                break;
+            default:
+                cout << "Please select a valid media type." << endl;
+                createNewList(outputFile, movieCount);
+                break;
+            }
+
             for (int i = 0; i < numEntries; i++) {
                 addMovie(outputFile, movieCount);
             }
@@ -28,7 +60,7 @@ void createNewList(fstream& outputFile, int& movieCount) {
             cout << "Unable to open file." << endl;
         }
     }
-    else if (overwrite == 'N') {
+    else if (overwrite == 'N' || overwrite == 'n') {
         runProgram();
     }
     else {

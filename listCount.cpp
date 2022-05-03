@@ -1,7 +1,7 @@
 #include "listCount.h"
 using namespace std;
 
-// Updates the listCount in the listCount.txt file
+// Updates the length of the list (listCount) in the listCount.txt file
 void storeListCount(fstream& listCount, int& movieCount) {
     listCount.open("listCount.txt");
 
@@ -14,7 +14,7 @@ void storeListCount(fstream& listCount, int& movieCount) {
     }
 }
 
-// Returns listCount stored in the listCount.txt file
+// Returns the length of the list stored in the listCount.txt file
 int getListCount(fstream& listCount) {
     listCount.open("listCount.txt", ios::in);
 
